@@ -1,3 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #23252C;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.card {
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.info {
+  width: 350px;
+  text-align: center;
+}
+
+.info--photo {
+  width: 100%;
+}
+
+.info--name {
+  font-size: 25px;
+  color: #2B283A;
+  line-height: 1.8;
+}
+
+.info--profession {
+  color: #F47D27;
+  font-size: 12.8px;
+  font-weight: 300;
+}
+
+.info--website {
+  font-size: 10.24px;
+  text-decoration: none;
+  color: #2B283A;
+}
+
+.info--btns {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.info--btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  font-size: 14px;
+  padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.info--btn-email {
+  background-color: #fff;
+  border: 1px solid #D1D5DB;
+  color: #23252C;
+}
+
+.info--btn-linkedin {
+  background-color: #297FE5;
+  color: #fff;
+  border: none;
 }
