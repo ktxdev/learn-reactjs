@@ -12,6 +12,11 @@ body {
 }
 
 .container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.app {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -23,10 +28,10 @@ body {
   background-color: #F5F5F5;
   border-radius: 10px;
   overflow: hidden;
+  width: 350px;
 }
 
 .info {
-  width: 350px;
   text-align: center;
 }
 
@@ -54,10 +59,9 @@ body {
 
 .info--btns {
   display: flex;
-  width: 100%;
   gap: 10px;
-  justify-content: center;
   margin: 10px 0;
+  width: 100%;
 }
 
 .info--btn {
@@ -69,6 +73,7 @@ body {
   padding: 5px 20px;
   cursor: pointer;
   border-radius: 5px;
+  flex-grow: 1;
 }
 
 .info--btn-email {
@@ -81,4 +86,15 @@ body {
   background-color: #297FE5;
   color: #fff;
   border: none;
+}
+
+.content--title {
+  line-height: 2;
+  color: #23252C;
+}
+
+.content--text {
+  line-height: 1.4;
+  font-weight: 300;
+  font-size: 12px;
 }
