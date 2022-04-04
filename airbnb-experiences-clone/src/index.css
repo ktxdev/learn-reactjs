@@ -18,6 +18,14 @@ nav {
   box-shadow: 0px 3px 7px 0px #0000001A;
 }
 
+.gray {
+  color: #918e9b;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .nav--logo {
   max-width: 100px;
 }
@@ -39,6 +47,30 @@ section {
 .hero--header {
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.card {
+  width: 175px;
+  font-size: 12px;
+}
+
+.card--text {
+  padding: 1px 0px;
+}
+
+.card--image {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.card--stats {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.card--star {
+  height: 14px;
 }
 
 
