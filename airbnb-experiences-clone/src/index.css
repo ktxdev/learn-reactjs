@@ -49,9 +49,16 @@ section {
   margin-bottom: 16px;
 }
 
+.cards-list {
+  display: flex;
+  gap: 20px;
+  overflow-y: scroll;
+}
 .card {
   width: 175px;
   font-size: 12px;
+  flex: 0 0 175px;
+  overflow: hidden;
 }
 
 .card--text {
@@ -72,5 +79,6 @@ section {
 .card--star {
   height: 14px;
 }
+
 
 
