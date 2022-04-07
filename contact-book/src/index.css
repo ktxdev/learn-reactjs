@@ -40,3 +40,54 @@ body {
 .header--btn:hover {
     background-color: #231f20c9;
 }
+
+.contact {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+}
+
+.contact--photo {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.contact--email,
+.contact--phone {
+    color: #4e4a4b;
+    font-weight: 100;
+}
+
+.contact--btns {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.contact--btn {
+    flex: 1 1 auto;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact--btn:hover {
+    background-color: #EFE6DD;
+}
+
+.contact--edit {
+    background-color: #7EBDC2;
+}
+
+.contact--edit:hover {
+    background-color: #5f9599;
+}
