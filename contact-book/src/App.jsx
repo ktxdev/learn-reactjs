@@ -27,7 +27,11 @@ const App = () => {
   const toggleShowContactDetails = () => setShowContactDetails(!showContactDetails);
 
   const saveContactDetails = () => {
-    console.log(contactDetails);
+    if(contactDetails.id === 0) {
+      setContactDetails({...contactDetails, id: contacts.length + 1});
+      setContacts([...contacts, contactDetails]);
+    }
+    setContactDetails(initContactDetailsState);
   }
 
   return (
