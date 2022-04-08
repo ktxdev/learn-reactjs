@@ -43,9 +43,14 @@ const App = () => {
   }
 
   const editContactDetails = (id) => {
-    const contactToUpdate = contacts.filter(contact => contact.id == id)[0];
+    const contactToUpdate = contacts.filter(contact => contact.id === id)[0];
     setContactDetails(contactToUpdate);
     toggleShowContactDetails();
+  }
+
+  const deleteContact = (id) => {
+    const updatedContacts = contacts.filter(contact => contact.id !== id);
+    setContacts(updatedContacts);
   }
 
   return (
@@ -60,7 +65,7 @@ const App = () => {
       }
       <Header onNewContact={toggleShowContactDetails} />
       {
-        contacts.map(contact => <Contact {...contact} onEdit={editContactDetails} />)
+        contacts.map(contact => <Contact {...contact} onEdit={editContactDetails} onDelete={deleteContact} />)
       }
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = ({ id, photoUrl, name, phone, email, onEdit}) => {
+const Contact = ({ id, photoUrl, name, phone, email, onEdit, onDelete}) => {
 
   return (
     <div className='contact'>
@@ -10,7 +10,7 @@ const Contact = ({ id, photoUrl, name, phone, email, onEdit}) => {
         <h4 className='contact--email'>{email}</h4>
         <div className='contact--btns'>
             <button onClick={() => onEdit(id)} className='contact--btn contact--edit'>Edit</button>
-            <button className='contact--btn'>Delete</button>
+            <button onClick={() => onDelete(id)} className='contact--btn'>Delete</button>
         </div>
     </div>
   )
