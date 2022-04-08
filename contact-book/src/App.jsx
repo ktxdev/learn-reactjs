@@ -71,6 +71,9 @@ const App = () => {
       <Header onNewContact={toggleShowContactDetails} />
       <section className='contact-list'>
         {
+          contacts.length === 0 && <h4>No Contacts</h4>
+        }
+        {
           contacts.map(contact => <Contact {...contact} onEdit={editContactDetails} onDelete={deleteContact} />)
         }
       </section>
