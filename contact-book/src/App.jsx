@@ -24,11 +24,17 @@ const App = () => {
   const [showContactDetails, setShowContactDetails] = useState(false);
   const [contactDetails, setContactDetails] = useState(initContactDetailsState)
 
-  const toggleShowContactDetails = () => setShowContactDetails(!showContactDetails);
+  const toggleShowContactDetails = () => {
+    if (showContactDetails) {
+      setContactDetails(initContactDetailsState);
+    }
+      
+    setShowContactDetails(!showContactDetails);
+  }
 
   const saveContactDetails = () => {
-    if(contactDetails.id === 0) {
-      setContacts([...contacts, {...contactDetails, id: contacts.length + 1}]);
+    if (contactDetails.id === 0) {
+      setContacts([...contacts, { ...contactDetails, id: contacts.length + 1 }]);
     } else {
       const updatedContacts = contacts.map(contact => {
         if (contact.id === contactDetails.id)
@@ -38,7 +44,6 @@ const App = () => {
 
       setContacts(updatedContacts);
     }
-    setContactDetails(initContactDetailsState);
     toggleShowContactDetails();
   }
 
@@ -64,9 +69,11 @@ const App = () => {
           onSave={saveContactDetails} />
       }
       <Header onNewContact={toggleShowContactDetails} />
-      {
-        contacts.map(contact => <Contact {...contact} onEdit={editContactDetails} onDelete={deleteContact} />)
-      }
+      <section className='contact-list'>
+        {
+          contacts.map(contact => <Contact {...contact} onEdit={editContactDetails} onDelete={deleteContact} />)
+        }
+      </section>
     </div>
   );
 }
