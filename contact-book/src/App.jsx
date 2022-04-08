@@ -12,15 +12,7 @@ const App = () => {
     id: 0,
   }
 
-  const [contacts, setContacts] = useState([
-    {
-      id: 1,
-      photoUrl: "https://avatars.githubusercontent.com/u/64103955?v=4",
-      name: "Sean Huvaya",
-      phone: "+263773806130",
-      email: "sean.ktxdev@gmail.com"
-    }
-  ])
+  const [contacts, setContacts] = useState([])
   const [showContactDetails, setShowContactDetails] = useState(false);
   const [contactDetails, setContactDetails] = useState(initContactDetailsState)
 
