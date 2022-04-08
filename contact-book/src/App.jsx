@@ -12,7 +12,16 @@ const App = () => {
     id: 0,
   }
 
-  const [showContactDetails, setShowContactDetails] = useState(true);
+  const [contacts, setContacts] = useState([
+    {
+      id: 1,
+      photoUrl: "https://avatars.githubusercontent.com/u/64103955?v=4",
+      name: "Sean Huvaya",
+      phone: "+263773806130",
+      email: "sean.ktxdev@gmail.com"
+    }
+  ])
+  const [showContactDetails, setShowContactDetails] = useState(false);
   const [contactDetails, setContactDetails] = useState(initContactDetailsState)
 
   const toggleShowContactDetails = () => setShowContactDetails(!showContactDetails);
@@ -23,16 +32,18 @@ const App = () => {
 
   return (
     <div className='app'>
-      { 
-        showContactDetails && 
-        <NewContact 
-          contactDetails={contactDetails} 
+      {
+        showContactDetails &&
+        <NewContact
+          contactDetails={contactDetails}
           setContactDetails={setContactDetails}
           onCancel={toggleShowContactDetails}
-          onSave={saveContactDetails}/> 
+          onSave={saveContactDetails} />
       }
-      <Header onNewContact={toggleShowContactDetails}/>
-      <Contact />
+      <Header onNewContact={toggleShowContactDetails} />
+      {
+        contacts.map(contact => <Contact {...contact} />)
+      }
     </div>
   );
 }
