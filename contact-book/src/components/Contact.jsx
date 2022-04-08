@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Contact = ({ photoUrl, name, phone, email}) => {
+const Contact = ({ id, photoUrl, name, phone, email, onEdit}) => {
+
   return (
     <div className='contact'>
         <img className='contact--photo' src={photoUrl} alt="Contact Image" />
@@ -8,7 +9,7 @@ const Contact = ({ photoUrl, name, phone, email}) => {
         <h4 className='contact--phone'>{phone}</h4>
         <h4 className='contact--email'>{email}</h4>
         <div className='contact--btns'>
-            <button className='contact--btn contact--edit'>Edit</button>
+            <button onClick={() => onEdit(id)} className='contact--btn contact--edit'>Edit</button>
             <button className='contact--btn'>Delete</button>
         </div>
     </div>

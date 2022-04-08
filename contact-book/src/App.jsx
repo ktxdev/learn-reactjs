@@ -28,10 +28,24 @@ const App = () => {
 
   const saveContactDetails = () => {
     if(contactDetails.id === 0) {
-      setContactDetails({...contactDetails, id: contacts.length + 1});
-      setContacts([...contacts, contactDetails]);
+      setContacts([...contacts, {...contactDetails, id: contacts.length + 1}]);
+    } else {
+      const updatedContacts = contacts.map(contact => {
+        if (contact.id === contactDetails.id)
+          return contactDetails;
+        return contact;
+      })
+
+      setContacts(updatedContacts);
     }
     setContactDetails(initContactDetailsState);
+    toggleShowContactDetails();
+  }
+
+  const editContactDetails = (id) => {
+    const contactToUpdate = contacts.filter(contact => contact.id == id)[0];
+    setContactDetails(contactToUpdate);
+    toggleShowContactDetails();
   }
 
   return (
@@ -46,7 +60,7 @@ const App = () => {
       }
       <Header onNewContact={toggleShowContactDetails} />
       {
-        contacts.map(contact => <Contact {...contact} />)
+        contacts.map(contact => <Contact {...contact} onEdit={editContactDetails} />)
       }
     </div>
   );
